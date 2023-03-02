@@ -1,0 +1,17 @@
+{% extends 'users/main.html' %}
+
+{% block content %}
+
+<div class="singlecol">
+    {% if user.is_authenticated %}
+        <div class="card" style="text-align: center;">
+            <h1>Hello {{user.first_name}}!</h1>
+        </div>
+    {% else %}
+        <div class="card" style="text-align: center;">
+            <h1>Hi! How was your day?</h1>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock content %}

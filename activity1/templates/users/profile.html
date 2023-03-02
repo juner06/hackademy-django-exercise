@@ -1,0 +1,23 @@
+{% extends 'users/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  <div class="leftcolumn">
+    <div class="card" style="text-align: center;">
+      <h2>User Profile</h2>
+      <div class="fakeimg3"><a href="{% url 'edit_user' %}" class="btn btn-primary btn-lg" role="button" aria-disabled="true">Edit Profile</a></div>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <table class="table">
+              <tr>
+                  <td width="30%" style="text-align: center; padding-top: 50px;"><img class="rounded-circle" src="{{user.profile.profilepicture.url}}" alt="Profile Picture" style="width: 200px; height: 150px;"></td>
+                  <td width="35%"><hr><h6><strong>Name:</strong></h6><hr> {{user.first_name}} {{user.last_name}}<br><hr><h6><strong>Description:</strong></h6><hr>{{user.profile.description}}</td>
+              </tr>
+      </table>
+    </div>
+  </div>
+{% endblock content %}

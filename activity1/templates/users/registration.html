@@ -1,0 +1,24 @@
+{% extends 'users/main.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+{% if form.errors %}
+
+<div class="alert alert-danger" role="alert">
+  <p>There was an error with your form!</p>
+</div>
+
+{% endif %}
+
+  <div class="singlecol">
+    <div class="card">
+      <h2 style="text-align: center;">Register</h2><hr><br>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+  </div>
+
+{% endblock content %}

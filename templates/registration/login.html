@@ -1,0 +1,24 @@
+{% extends 'users/main.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="singlecol">
+    <div class="card">
+        <form action="" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="InputUser" class="form-label">Username</label>
+            <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="InputPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password">
+          </div>
+          <button type="submit" class="btn btn-primary">Log in</button>
+        </form>
+        <br>
+        <p style="text-align:center">Don't have an account? Register <a href="{% url 'registration' %}">here</a>.</p>
+    </div>
+</div>
+
+{% endblock content %}
